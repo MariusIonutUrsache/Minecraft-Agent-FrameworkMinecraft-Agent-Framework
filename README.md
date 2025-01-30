@@ -12,8 +12,8 @@ Este proyecto implementa un framework en Python que permite la creación de agen
 ### 2️⃣ Pasos para la Instalación
 1. Clonar el Repositorio:
    ```bash
-   git clone https://github.com/AdventuresInMinecraft/AdventuresInMinecraft-PC
-   cd AdventuresInMinecraft-PC
+   git clone https://github.com/MariusIonutUrsache/Minecraft-Agent-FrameworkMinecraft-Agent-Framework
+   
 2. Instalar Dependencias:
 
     ```bash
