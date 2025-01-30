@@ -2,6 +2,11 @@
 
 Este proyecto implementa un framework en Python que permite la creación de agentes (bots) para interactuar dentro de un servidor de Minecraft ejecutado en `localhost`. Utiliza la librería `mcpi` para la interacción con Minecraft y soporta múltiples agentes con diferentes funcionalidades.
 
+# Autores del Proyecto:
+
+- Marius Ionut Ursache
+- Àlex Casanova Margalef
+
 ## Instalación
 
 ### 1️⃣ Requisitos Previos
@@ -12,13 +17,14 @@ Este proyecto implementa un framework en Python que permite la creación de agen
 ### 2️⃣ Pasos para la Instalación
 1. Clonar el Repositorio:
    ```bash
-   git clone https://github.com/MariusIonutUrsache/Minecraft-Agent-FrameworkMinecraft-Agent-Framework
+   git clone https://github.com/MariusIonutUrsache/Minecraft-Agent-Framework
    
 2. Instalar Dependencias:
 
     ```bash
     pip install mcpi
     pip install openai
+
 3. Configurar la Variable de Entorno OPENAI_API_KEY (Opcional):**
 
 - Windows CMD:
@@ -31,6 +37,7 @@ Este proyecto implementa un framework en Python que permite la creación de agen
 - Linux/macOS:
     ```bash
     export OPENAI_API_KEY="tu-clave-api"
+    
 4. Ejecutar Minecraft (Versión 1.12):
 
 5. Configura un servidor en localhost.
