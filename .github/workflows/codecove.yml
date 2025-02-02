@@ -11,7 +11,6 @@ on:
 jobs:
   coverage:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -19,23 +18,21 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r MyAdventures/requirements.txt
+          pip install coverage  # Instala directamente coverage
 
       - name: Run tests and generate coverage report
-        run: coverage run -m unittest discover -s MyAdventures/tests
+        run: |
+          coverage run -m unittest discover -s MyAdventures/tests
+          coverage xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
           files: coverage.xml
           flags: unittests
-          name: coverage-report
           fail_ci_if_error: true
-
-      - name: Generate coverage report in HTML
-        run: coverage html
