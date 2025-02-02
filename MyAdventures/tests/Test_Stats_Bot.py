@@ -1,18 +1,8 @@
-import sys
-import os
 import unittest
-from unittest.mock import MagicMock
-import time
-import math
-
-# Obtener la ruta absoluta del directorio actual (donde está el test)
-current_dir = os.path.dirname(__file__)
-project_root = os.path.abspath(os.path.join(current_dir, '..'))
-if project_root not in sys.path:
-    sys.path.append(project_root)
-
-from agents.StatsBot import StatsBot  # Importar el bot a probar
 import mcpi.minecraft as minecraft
+from unittest.mock import MagicMock
+from agents.StatsBot import StatsBot  # Importar el bot a probar
+
 
 class TestStatsBot(unittest.TestCase):
     def setUp(self):

@@ -1,16 +1,9 @@
 import unittest
-from unittest.mock import MagicMock, patch
 import time
-import os
-import sys
 import threading
-# Obtener la ruta absoluta del directorio actual (donde está BuilderBot.py)
-current_dir = os.path.dirname(__file__)
-project_root = os.path.abspath(os.path.join(current_dir, '..'))
-if project_root not in sys.path:
-    sys.path.append(project_root)
-# Importar la clase BotChat
 from agents.BotChat import BotChat
+from unittest.mock import MagicMock, patch
+
 
 class TestBotChat(unittest.TestCase):
     def setUp(self):
