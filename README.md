@@ -93,3 +93,5 @@ Este proyecto incluye pruebas unitarias que verifican el funcionamiento de los a
     start htmlcov/index.html  # En Windows
     open htmlcov/index.html   # En macOS
     xdg-open htmlcov/index.html  # En Linux
+
+FIN
