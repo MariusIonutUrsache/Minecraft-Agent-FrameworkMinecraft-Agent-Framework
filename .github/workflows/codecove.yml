@@ -1,17 +1,38 @@
-codecov:
-  require_ci_to_pass: yes  # Requiere que CI pase antes de procesar
-  notify:
-    slack: false  # Desactiva notificaciones en Slack si no las necesitas
+name: Code Coverage
 
-coverage:
-  precision: 2
-  round: down
-  range: "70...100"  # Define un rango visual de cobertura
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
-comment:
-  layout: "reach, diff, flags, files"  # Configura el comentario en pull requests
-  behavior: default
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
-ignore:
-  - tests/*  # Ignora la carpeta de tests para el reporte de cobertura
-  - __init__.py  # Ignora archivos __init__.py
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install coverage codecov
+
+      - name: Run tests and generate coverage report
+        run: |
+          coverage run -m unittest discover -s tests
+          coverage xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: true
