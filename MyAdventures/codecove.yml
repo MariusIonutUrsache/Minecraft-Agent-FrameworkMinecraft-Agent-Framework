@@ -1,0 +1,17 @@
+codecov:
+  require_ci_to_pass: yes  # Requiere que CI pase antes de procesar
+  notify:
+    slack: false  # Desactiva notificaciones en Slack si no las necesitas
+
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"  # Define un rango visual de cobertura
+
+comment:
+  layout: "reach, diff, flags, files"  # Configura el comentario en pull requests
+  behavior: default
+
+ignore:
+  - tests/*  # Ignora la carpeta de tests para el reporte de cobertura
+  - __init__.py  # Ignora archivos __init__.py
