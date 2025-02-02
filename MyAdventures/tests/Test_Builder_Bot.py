@@ -1,7 +1,14 @@
+import sys
+import os
 import unittest
-import mcpi.block as block
 from unittest.mock import MagicMock, call
+# Obtener la ruta absoluta del directorio actual (donde está BuilderBot.py)
+current_dir = os.path.dirname(__file__)
+project_root = os.path.abspath(os.path.join(current_dir, '..'))
+if project_root not in sys.path:
+    sys.path.append(project_root)
 from agents.BuilderBot import BuilderBot
+import mcpi.block as block
 
 
 class TestBuilderBot(unittest.TestCase):

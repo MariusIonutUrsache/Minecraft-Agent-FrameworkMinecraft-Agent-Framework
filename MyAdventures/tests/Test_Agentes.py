@@ -1,5 +1,16 @@
+import sys
+import os
 import unittest
+# Obtener la ruta absoluta del directorio actual (donde está Bot_Tnt.py)
+current_dir = os.path.dirname(__file__)
+# Navegar al directorio raíz del proyecto (un nivel hacia arriba)
+project_root = os.path.abspath(os.path.join(current_dir, '..'))
+# Agregar el directorio raíz al PYTHONPATH si no está ya incluido
+if project_root not in sys.path:
+    sys.path.append(project_root)
 from framework.AgenteBase import AgenteBase
+import mcpi.minecraft as minecraft
+from abc import ABCMeta
 
 
 class TestAgenteBase(unittest.TestCase):

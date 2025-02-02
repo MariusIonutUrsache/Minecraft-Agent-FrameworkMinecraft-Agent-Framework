@@ -1,7 +1,16 @@
 import unittest
-import time
-from agents.BotTnt import BotTnt
 from unittest.mock import MagicMock, call
+import time
+import os
+import sys
+# Obtener la ruta absoluta del directorio actual (donde está BuilderBot.py)
+current_dir = os.path.dirname(__file__)
+project_root = os.path.abspath(os.path.join(current_dir, '..'))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+# Importar la clase BotTnt
+from agents.BotTnt import BotTnt
 
 class TestBotTnt(unittest.TestCase):
     def setUp(self):
